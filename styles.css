@@ -11,6 +11,7 @@ body {
     background-color: #f7f7f7;
     color: #333;
     line-height: 1.6;
+    background-image: url('https://www.transparenttextures.com/patterns/black-tile.png'); /* Fondo sutil */
 }
 
 /* Header Styles */
@@ -20,8 +21,25 @@ header {
     padding: 30px 0;
     text-align: center;
     font-family: 'Playfair Display', serif;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Agregar un gráfico de línea digital o circuito en el header */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0e/Abstract_technology_background_with_circuit_pattern.jpg');
+    background-size: cover;
+    opacity: 0.05; /* Sutil, para no restar protagonismo al contenido */
+    z-index: -1; /* Colocar detrás del contenido */
+}
+
+/* Header Text */
 header h1 {
     font-size: 3rem;
     margin-bottom: 10px;
@@ -42,6 +60,20 @@ header .location {
 section {
     padding: 60px 0;
     text-align: center;
+    position: relative;
+}
+
+/* Patrones de fondo en las secciones */
+section::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-image: url('https://www.transparenttextures.com/patterns/technology.png');
+    opacity: 0.1;
+    z-index: -1; /* Colocarlo debajo del contenido */
 }
 
 section h2 {
@@ -64,6 +96,45 @@ section p {
     margin: 0 auto;
 }
 
+/* Contact Section */
+#contact {
+    background-color: #f1f1f1;
+    padding: 40px 0;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: #00b8a9;
+}
+
+.contact-icon {
+    width: 25px;
+    height: 25px;
+}
+
 /* Footer Styles */
 footer {
     background-color: #2d2d2d;
@@ -72,6 +143,11 @@ footer {
     text-align: center;
     font-size: 1rem;
 }
+
+footer p {
+    font-family: 'Roboto', sans-serif;
+}
+
 
 footer p {
     font-family: 'Roboto', sans-serif;
